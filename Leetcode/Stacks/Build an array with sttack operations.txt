@@ -1,0 +1,13 @@
+class Solution:
+    def buildArray(self, target: List[int], n: int) -> List[str]:
+        
+      oper_array=[]
+      for i in range(1,max(target)+1):
+            if i in target:
+                oper_array.append("Push")
+                
+            else:
+                oper_array.append("Push")
+                oper_array.append("Pop")
+      return oper_array   
+#took some time to figure out that I hd to use max(target), tried various methods
