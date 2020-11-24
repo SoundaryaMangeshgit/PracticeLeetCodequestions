@@ -1,0 +1,55 @@
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+class Solution:
+    def middleNode(self, head: ListNode) -> ListNode:
+        
+        temp=head
+        len_list=0
+        while(temp):
+            len_list=len_list+1
+            temp=temp.next
+        print("len",len_list)    
+        
+        temp1=head
+        temp2=temp1
+        iter=0
+        if(len_list%2==0):
+            count=len_list/2
+           
+            while(iter<count):
+                iter+=1
+                temp1=temp1.next
+        
+            return temp1
+        if(len_list%2!=0):
+            count=int(len_list/2)
+           
+            iter=0
+            while(iter<count):
+                iter+=1
+                print("iter val",iter)
+                temp1=temp1.next
+         
+            return temp1        
+            
+            
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
