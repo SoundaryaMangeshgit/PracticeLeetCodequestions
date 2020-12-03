@@ -1,0 +1,15 @@
+class Solution:
+    def xorOperation(self, n: int, start: int) -> int:
+        
+      
+        
+        sum_bin=start
+        for i in range(1,n):
+            val=2*i +start
+            sum_bin=bin(sum_bin)
+            val_bin=bin(val)
+            sum_bin=int(sum_bin,2)^ int(val_bin,2)
+        print("final val",sum_bin) 
+        return sum_bin
+            
+      # could have improved it using lamda funcions, should learn
