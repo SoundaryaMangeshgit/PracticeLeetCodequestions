@@ -1,0 +1,26 @@
+from numpy import *
+import numpy
+class Solution:
+    def maxIncreaseKeepingSkyline(self, grid: List[List[int]]) -> int:
+  
+     
+        def copy_array(mat):
+          return [list(i) for i in mat]
+        grid1=copy_array(grid)
+        for rows in range(0,len(grid1)):
+            for cols in range(0,len(grid1)):
+                row_val=grid1[rows]
+                col_val=[col[cols] for col in grid1]
+                r_max=max(row_val)
+                c_max=max(col_val)
+                val=min(r_max,c_max)
+                
+                if(grid1[rows][cols]<val):
+                    grid1[rows][cols]=val
+        
+        output=numpy.subtract(grid1,grid)
+        
+        out=numpy.sum(output)
+        
+        return out
+# took most time to figure out how to copy array duplicate .            
