@@ -1,0 +1,15 @@
+class Solution:
+    def restoreString(self, s: str, indices: List[int]) -> str:
+        
+
+        output=''
+        dict_words={}
+        for i in range(0,len(indices)):
+            dict_words[indices[i]]=s[i]
+     
+        for k1 in sorted (dict_words):
+            
+            output=output+dict_words[k1]
+            
+            
+        return output
