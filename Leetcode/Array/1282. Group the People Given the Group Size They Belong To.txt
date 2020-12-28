@@ -1,0 +1,53 @@
+from itertools import groupby
+from collections import Counter
+class Solution:
+    def groupThePeople(self, groupSizes: List[int]) -> List[List[int]]:
+
+              
+             dict_new={}  
+             for i in groupSizes :
+                    if i not in dict_new:
+                        dict_new[i]=1
+                    else:
+                        dict_new[i]+=1
+           
+             temp_list=[]
+          
+             final_ans=[]  
+             final_ans1=[]
+             for k,v in dict_new.items():
+                    temp_list=[]
+                    # if(k==v):
+                    for i in range(0,len(groupSizes)):
+                            if(groupSizes[i]==k ):
+                                temp_list.append(i)
+                               
+                    final_ans.append(temp_list)  
+                    avg = k
+                    split_arr = []
+                    last = 0
+
+                    while last < len(temp_list):
+                       split_arr.append(temp_list[int(last):int(last + avg)])
+                       last += avg
+                    final_ans1.append(split_arr) 
+                    split_arr=[]
+
+           
+                        
+                    temp_list=[] 
+                    
+             
+          
+             final_2=[]   
+             for c in final_ans1:
+                for r in c:
+                    final_2.append(r)
+             return final_2     
+                    
+                    
+        
+
+
+                
+                        
