@@ -1,0 +1,12 @@
+class Solution:
+    def numberOfSteps (self, num: int) -> int:
+        sum=0
+        while(num>0):
+            if(num%2==0):
+                num=num/2
+                sum=sum+1
+            if(num%2==1):
+                num=num-1
+                sum=sum+1
+        print(sum)  
+        return sum
