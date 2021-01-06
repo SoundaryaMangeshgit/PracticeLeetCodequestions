@@ -1,0 +1,27 @@
+class Solution:
+    def filterRestaurants(self, restaurants: List[List[int]], veganFriendly: int, maxPrice: int, maxDistance: int) -> List[int]:
+        final=[]
+        dict_val={}
+        if(veganFriendly==1):
+            for i in range(0,len(restaurants)):
+                x=''
+                x=restaurants[i]
+                if(veganFriendly==x[2] and x[3]<=maxPrice and x[4]<=maxDistance):
+                    dict_val[x[0]]=x[1]
+                    x=''
+            ans=OrderedDict(sorted(dict_val.items(),reverse= True, key=lambda k:(k[1],k[0])))
+            
+            print("ans",ans)
+            return ans
+               
+        else:
+            for i in range(0,len(restaurants)):
+                x=''
+                x=restaurants[i]
+                if(x[3]<=maxPrice and x[4]<=maxDistance):
+                    dict_val[x[0]]=x[1]
+                    x=''
+            ans= OrderedDict(sorted(dict_val.items(),reverse= True, key=lambda k:(k[1],k[0])))
+            print("ans",ans)
+            return ans 
+  
