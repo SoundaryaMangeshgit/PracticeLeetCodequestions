@@ -1,0 +1,22 @@
+class Solution:
+    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        
+        
+        flag=0
+        output=[]
+        for i in nums1:
+            flag=0
+            for j in nums2:
+                if (flag==0 and i ==j):
+                    flag=1
+                elif(flag==1 and j>i):
+                    output.append(j)
+                    break
+                   
+            else:
+                print(" i am called here with i",i)
+                output.append(-1)        
+                    
+        print("outout",output)
+        return output
+                
